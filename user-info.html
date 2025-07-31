@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Info – NeutriBuddy</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+   <!-- Navbar -->
+<header class="navbar">
+  <div class="logo">
+    NeutriBuddy
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="calculators.html">Calculators</a></li>
+    <li><a href="infographics.html">Infographics</a></li>
+    <li><a href="meal-plans.html">Meal Plans</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="auth-buttons">
+    <a href="login.html" class="nav-btn login-btn">Login</a>
+    <a href="signup.html" class="nav-btn signup-btn">Sign Up</a>
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="auth-container scroll-up">
+      <h2>👋 Tell Us More About You</h2>
+      <form id="userInfoForm" class="auth-form">
+        <div class="form-group">
+          <input type="text" id="userName" name="name" placeholder=" " required />
+          <label for="name">Username</label>
+        </div>
+        <div class="form-group">
+          <input type="number" id="userAge" name="age" placeholder=" " required />
+          <label for="age">Age</label>
+        </div>
+        <div class="form-group">
+          <input type="number" id="userWeight" name="weight" placeholder=" " required />
+          <label for="weight">Weight (kg)</label>
+        </div>
+        <div class="form-group">
+          <input type="number" id="userHeight" name="height" placeholder=" " required />
+          <label for="height">Height (cm)</label>
+        </div>
+        <div class="form-group">
+          <select id="gender" name="userGender" required>
+            <option value="" disabled selected>Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select id="userActivityLevel" name="activityLevel" required>
+            <option value="" disabled selected>Select activity level</option>
+            <option value="sedentary">Sedentary</option>
+            <option value="light">Lightly Active</option>
+            <option value="moderate">Moderately Active</option>
+            <option value="active">Very Active</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select id="goalValue" name="goal" required>
+            <option value="" disabled selected>Select your goal</option>
+            <option value="lose fat">Lose Fat</option>
+            <option value="gain muscle">Gain Muscle</option>
+            <option value="maintain">Maintain Weight</option>
+          </select>
+
+        </div>
+        <button type="submit" class="auth-btn">Finish Signup</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer dark-section">
+    <p>&copy; 2025 NeutriBuddy. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+  document.querySelector(".auth-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Correctly fetch values from inputs
+    const name = document.getElementById("userName").value;
+    const age = parseInt(document.getElementById("userAge").value, 10);
+    const weight = parseFloat(document.getElementById("userWeight").value);
+    const height = parseFloat(document.getElementById("userHeight").value);
+    const gender = document.getElementById("gender").value;
+    const activity = document.getElementById("userActivityLevel").value;
+    const goal = document.getElementById("goalValue").value;
+
+    // Basic input validation
+    if (
+      !name || !gender || !activity || !goal ||
+      age < 10 || age > 120 ||
+      weight < 20 || weight > 300 ||
+      height < 80 || height > 250
+    ) {
+      alert("⚠️ Please enter valid and complete information.");
+      return;
+    }
+
+    // BMR calculation
+    const bmr =
+      gender === "male"
+        ? 10 * weight + 6.25 * height - 5 * age + 5
+        : 10 * weight + 6.25 * height - 5 * age - 161;
+
+    // Activity multiplier
+    const activityMultipliers = {
+      sedentary: 1.2,
+      light: 1.375,
+      moderate: 1.55,
+      active: 1.725,
+    };
+    const tdee = Math.round(bmr * (activityMultipliers[activity] || 1.2));
+
+    // Macros calculation
+    const carb = Math.round((tdee * 0.5) / 4);
+    const protein = Math.round((tdee * 0.2) / 4);
+    const fat = Math.round((tdee * 0.3) / 9);
+
+    // BMI
+    const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+
+    // Save user info
+    const user = {
+      name,
+      age,
+      weight,
+      height,
+      gender,
+      activity,
+      goal: document.getElementById("goalValue")?.value || "maintain",
+      bmi,
+      calories: tdee,
+      macros: {
+        carb,
+        protein,
+        fat,
+      },
+    };
+
+    localStorage.setItem("userInfo", JSON.stringify(user));
+    window.location.href = "dashboard.html";
+  });
+</script>
+
+
+  </body>
+</html>

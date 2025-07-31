@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – NeutriBuddy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">NeutriBuddy</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="calculators.html">Calculators</a></li>
+    <li><a href="infographics.html">Infographics</a></li>
+    <li><a href="meal-plans.html">Meal Plans</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="auth-buttons">
+    <a href="index.html" class="nav-btn">Sign out</a>
+  </div>
+</header>
+
+<!-- Dashboard -->
+<section class="dashboard">
+  <div class="dashboard">
+  <div class="user-card card">
+    <h3><i class="fas fa-user"></i> Welcome,<br> <strong id="userName"></strong></h3>
+    <p><strong>Age:</strong> <span id="userAge"></span></p>
+    <p><strong>Weight:</strong> <span id="userWeight"></span> kg</p>
+    <p><strong>Height:</strong> <span id="userHeight"></span> cm</p>
+    <p><strong>Gender:</strong> <span id="userGender"></span></p>
+    <p><strong>Activity:</strong> <span id="userActivityLevel"></span></p>
+    <p><strong>BMI:</strong> <span id="bmiValue"></span></p>
+  </div>
+
+  <div class="goal-card">
+  <div class="card">
+    <h3><i class="fas fa-bullseye"></i> Goal: <span id="user-goal"></span></h3>
+    <div class="progress-bar">
+      <div class="progress" id="goal-progress" style="width: 40%;">40%</div>
+    </div>
+  </div>
+
+  <div class="calories-card card">
+    <h3><i class="fas fa-utensils"></i> Daily Calorie Needs</h3>
+    <p><strong><span id="calorieValue"></span> kcal</strong></p>
+  </div>
+</div>
+
+  <div style="display: flex; gap: 24px; grid-column: span 3;">
+    <div class="macros-card card" style="flex: 2;">
+      <h3><i class="fas fa-drumstick-bite"></i> Macronutrients</h3>
+      <div class="macros-grid">
+        <div class="macro-box">
+          <p><strong>Carbs</strong><br><span id="carbValue"></span> g</p>
+        </div>
+        <div class="macro-box">
+          <p><strong>Protein</strong><br><span id="proteinValue"></span> g</p>
+        </div>
+        <div class="macro-box full-width">
+          <p><strong>Fat</strong><br><span id="fatValue"></span> g</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-card card" style="flex: 1;">
+      <h3><i class="fas fa-quote-left"></i> Motivation</h3>
+      <p>“Take care of your body. It’s the only place you have to live.”</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<script src="css/dashboard.js"></script>
+</body>
+</html>

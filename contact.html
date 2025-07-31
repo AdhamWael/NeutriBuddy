@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – NeutriBuddy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">NeutriBuddy</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="calculators.html">Calculators</a></li>
+    <li><a href="infographics.html">Infographics</a></li>
+    <li><a href="meal-plans.html">Meal Plans</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="auth-buttons">
+    <a href="login.html" class="nav-btn login-btn">Login</a>
+    <a href="signup.html" class="nav-btn signup-btn">Sign Up</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="section dark-section scroll-up">
+  <div class="container">
+    <h1 class="section-title2">📞 Contact NeutriBuddy</h1>
+    <p class="section-subtitle">We’d love to hear from you! Whether it's feedback, questions, or partnerships.</p>
+  </div>
+</section>
+
+<!-- Contact Info & Form -->
+<section class="section light-section">
+  <div class="container contact-container scroll-up scroll-delay-2">
+
+    <div class="contact-info s<div class="contact-info scroll-up scroll-delay-1">
+  <h2 class="section-title">Get in Touch 🤝</h2>
+  <p class="contact-description">
+    At <strong>NeutriBuddy</strong>, we're on a mission to help you eat smarter, live healthier, and feel better every day. Whether you have a question, suggestion, or just want to connect — we’re here for you!
+  </p>
+
+  <ul class="contact-details">
+    <li><strong>📧 Email:</strong> <a href="mailto:support@NeutriBuddy.com">support@NeutriBuddy.com</a></li>
+    <li><strong>📞 Phone:</strong> <a href="tel:+20123456789">+20 123 456 789</a></li>
+    <li><strong>📍 Location:</strong> Cairo, Egypt</li>
+    <li><strong>🕒 Support Hours:</strong> Sun–Thu | 9:00 AM – 5:00 PM</li>
+  </ul>
+
+  <div class="social-links">
+    <a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a>
+    <a href="#"><i class="fa-brands fa-tiktok"></i>Tiktok</a>
+    <a href="#"><i class="fa-brands fa-youtube"></i>YouTube</a>
+    <a href="#"><i class="fa-brands fa-square-facebook"></i>Facebook</a>
+  </div>
+
+  <blockquote class="quote">"A healthy outside starts from the inside."</blockquote>
+</div>
+
+    <div class="contact-form scroll-up scroll-delay-2">
+      <h2>📬 Send a Message</h2>
+      <form id="contactForm">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder=" " required />
+          <label for="name">Your Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder=" " required />
+          <label for="email">Your Email</label>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+          <label for="message">Your Message</label>
+        </div>
+        <button type="submit" class="form-btn">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer dark-section">
+  <div class="container footer-content">
+    <div class="footer-col logo-col">
+      <h2 class="footer-logo">NeutriBuddy</h2>
+      <p>Your pocket buddy for smarter nutrition & health awareness.</p>
+    </div>
+
+    <div class="footer-col links-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="calculators.html">Calculators</a></li>
+        <li><a href="infographics.html">Infographics</a></li>
+        <li><a href="meal-plans.html">Meal Plans</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col newsletter-col">
+      <h3>Stay Updated</h3>
+      <p>Subscribe for health tips, updates, and special offers!</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-col contact-col">
+      <h3>Contact</h3>
+      <p>Email: support@NeutriBuddy.com</p>
+      <p>Phone: +20 123 456 7890</p>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 NeutriBuddy. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  //add form confirmation
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Thank you! Your message has been sent.");
+    this.reset();
+  });
+</script>
+
+</body>
+</html>

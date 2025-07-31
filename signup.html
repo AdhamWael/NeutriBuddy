@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up – NeutriBuddy</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">NeutriBuddy</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="calculators.html">Calculators</a></li>
+      <li><a href="infographics.html">Infographics</a></li>
+      <li><a href="meal-plans.html">Meal Plans</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="auth-buttons">
+      <a href="login.html" class="nav-btn login-btn">Login</a>
+      <a href="signup.html" class="nav-btn signup-btn active">Sign Up</a>
+    </div>
+  </header>
+
+<!-- Main Content -->
+  <main>
+    <div class="auth-container scroll-up">
+      <h2>👤 Create Account</h2>
+      <form class="auth-form" action="user-info.html">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder=" " required />
+          <label for="name">Full Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder=" " required />
+          <label for="email">Email</label>
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" name="password" placeholder=" " required />
+          <label for="password">Password</label>
+        </div>
+        <button type="submit" class="auth-btn">Next</button>
+      </form>
+      <div class="auth-extra">
+        Already have an account? <a href="login.html">Log in</a>
+      </div>
+    </div>
+  </main>
+
+<!-- Footer -->
+  <footer class="footer dark-section">
+    <p>&copy; 2025 NeutriBuddy. All rights reserved.</p>
+  </footer>
+
+
+  <!-- JavaScript -->
+<script>
+  const passwordInput = document.getElementById('password');
+  const confirmPasswordInput = document.createElement('input');
+  const form = document.querySelector('.auth-form');
+
+  // Create confirm password field dynamically to match style
+  confirmPasswordInput.setAttribute('type', 'password');
+  confirmPasswordInput.setAttribute('id', 'confirm-password');
+  confirmPasswordInput.setAttribute('name', 'confirm-password');
+  confirmPasswordInput.setAttribute('placeholder', ' ');
+  confirmPasswordInput.required = true;
+  confirmPasswordInput.classList.add('form-input');
+
+  const confirmLabel = document.createElement('label');
+  confirmLabel.setAttribute('for', 'confirm-password');
+  confirmLabel.textContent = 'Confirm Password';
+
+  const confirmWrapper = document.createElement('div');
+  confirmWrapper.classList.add('form-group');
+  confirmWrapper.appendChild(confirmPasswordInput);
+  confirmWrapper.appendChild(confirmLabel);
+
+  passwordInput.parentElement.insertAdjacentElement('afterend', confirmWrapper);
+
+  // Add password strength check and match validation
+  form.addEventListener('submit', (e) => {
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+
+    const isStrong = password.length >= 8 &&
+      /[A-Z]/.test(password) &&
+      /[a-z]/.test(password) &&
+      /[0-9]/.test(password) &&
+      /[!@#\$%\^&\*]/.test(password);
+
+    if (!isStrong) {
+      alert("❌ Password must be at least 8 characters and include uppercase, lowercase, number, and special character.");
+      e.preventDefault();
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("❌ Passwords do not match.");
+      e.preventDefault();
+      return;
+    }
+  });
+</script>
+
+</body>
+</html>

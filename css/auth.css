@@ -1,0 +1,194 @@
+/* auth.css – Consistent with contact form styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px 40px;
+}
+
+.auth-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 420px;
+  transition: 0.3s ease-in-out;
+}
+
+.auth-container h2 {
+  margin-bottom: 24px;
+  color: #1b5e20;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Floating Label Input Style */
+.form-group {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 16px;
+  border: 2px solid #a5d6a7;
+  border-radius: 8px;
+  background: transparent;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #1b5e20;
+}
+
+.form-group label {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  font-size: 16px;
+  color: #777;
+  pointer-events: none;
+  background: transparent;
+  padding: 0 4px;
+  transition: 0.2s ease all;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 13px;
+  color: #1b5e20;
+  background: #fff;
+}
+
+/* Submit Button */
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background-color: #1b5e20;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.auth-btn:hover {
+  background-color: #2e7d32;
+}
+
+/* Extra Links */
+.auth-extra {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.auth-extra a {
+  color: #1b5e20;
+  text-decoration: underline;
+  transition: 0.2s;
+}
+
+.auth-extra a:hover {
+  color: #388e3c;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  main {
+    padding-top: 80px;
+  }
+
+  .auth-container {
+    padding: 30px 20px;
+  }
+}
+
+/* User Info Dropdown Styling */
+.user-info select {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  color: #1b5e20;
+  background-color: #ffffff;
+  border: 2px solid #a5d6a7;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%231b5e20' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  transition: border-color 0.3s;
+}
+
+.user-info select:focus {
+  border-color: #1b5e20;
+  outline: none;
+  box-shadow: 0 0 4px rgba(27, 94, 32, 0.3);
+}
+
+.user-info label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1b5e20;
+}
+
+.user-info option {
+  color: #1b5e20;
+  background-color: #ffffff;
+}
+/* Enhanced dropdown styling */
+.auth-form select,
+.user-info select,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #a5d6a7;
+  border-radius: 8px;
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='darkgreen' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.auth-form select:focus {
+  border-color: #1b5e20;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(27, 94, 32, 0.3);
+}

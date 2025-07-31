@@ -1,0 +1,126 @@
+
+/* Balanced Plate Section */
+/* Balanced Plate Section */
+.plate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.plate-card {
+  background-color: #ffffff;
+  border: 2px solid #a5d6a7;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.plate-card:hover {
+  transform: translateY(-6px);
+}
+
+.plate-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.plate-card h3 {
+  font-size: 1.2rem;
+  color: #1b5e20;
+  margin-bottom: 0.25rem;
+}
+
+.plate-card .percent {
+  font-size: 1.5rem;
+  color: #2e7d32;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.plate-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Different shades for each card (optional unique touch) */
+.plate-card.protein { border-color: #81c784; }
+.plate-card.carbs   { border-color: #aed581; }
+.plate-card.veggies { border-color: #66bb6a; }
+.plate-card.fats    { border-color: #9ccc65; }
+
+/* Sugar in Drinks Grid */
+.sugar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.sugar-card {
+  background: #1e3d27;
+  color: #fff;
+  border: 2px solid #4caf50;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.sugar-card:hover {
+  transform: translateY(-6px);
+}
+
+.sugar-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sugar-card h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.sugar-grams {
+  font-weight: bold;
+  color: #a5d6a7;
+  margin-bottom: 0.8rem;
+}
+
+/* Base animation class */
+.scroll-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+
+/* Triggered when element enters viewport */
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional delay classes */
+.scroll-delay-1 {
+  transition-delay: 0.2s;
+}
+
+.scroll-delay-2 {
+  transition-delay: 0.4s;
+}
+
+.scroll-delay-3 {
+  transition-delay: 0.6s;
+}
+
+.scroll-delay-4 {
+  transition-delay: 0.8s;
+}
+
+.scroll-delay-5 {
+  transition-delay: 1s;
+}
